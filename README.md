@@ -12,9 +12,11 @@ Description
 ===========
 
 This Lua library Implements a locking primitive using lua-resty-redis.
+
 It is a port to lua of the locking mechanisim in https://github.com/andymccurdy/redis-py
 
 Blocking and Non-Blocking locks.
+
 100% nonblocking behavior.
 
 Synopsis
