@@ -47,17 +47,13 @@ Synopsis
                 local lock_acquired = lock:acquire()
                 if lock_acquired then
                     ngx.say("lock aquired!")
-                    return
+
+                    -- Critical section
+
+                    lock:release()
+                    ngx.say("lock released!")
                 end
    
-                -- Critical section
- 
-                local lock_released = lock:release()
-                if lock_acquired then
-                    ngx.say("lock released!")
-                    return
-                end
-                
 
                 -- put it into the connection pool of size 100,
                 -- with 0 idle timeout
